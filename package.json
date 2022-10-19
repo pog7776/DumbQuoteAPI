@@ -2,8 +2,9 @@
   "name": "quoteapi",
   "version": "1.0.0",
   "description": "Jank Quotes",
-  "main": "quote.js",
+  "main": "/quote.js",
   "scripts": {
+    "start": "node quote.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
