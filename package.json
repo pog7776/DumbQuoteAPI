@@ -1,0 +1,25 @@
+{
+  "name": "quoteapi",
+  "version": "1.0.0",
+  "description": "Jank Quotes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pog7776/DumbQuoteAPI.git"
+  },
+  "keywords": [
+    "quote",
+    "api",
+    "dumb",
+    "broken"
+  ],
+  "author": "Jack Cooper",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pog7776/DumbQuoteAPI/issues"
+  },
+  "homepage": "https://github.com/pog7776/DumbQuoteAPI#readme"
+}
