@@ -17,6 +17,7 @@ app.get('/api/quote', async (req, res) => {
 
     var outquote = splitAtRandom(quote1.content, true) + " " + splitAtRandom(quote2.content, false) + "\n - " + quote1.author + " & " + quote2.author;
     console.log(outquote);
+    res.header("Access-Control-Allow-Origin", '*'); 
     res.send(outquote);
 });
 
