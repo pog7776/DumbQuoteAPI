@@ -21,6 +21,28 @@ app.get('/api/quote', async (req, res) => {
     res.send(outquote);
 });
 
+app.get('/api/quote/json', async (req, res) => {
+    console.log('GET /api/quote');
+
+    var quote1;
+    await getQuoteAsync().then((data) => quote1 = data);
+    console.log(quote1.content, true + " - " + quote1.author);
+
+    var quote2;
+    await getQuoteAsync().then((data) => quote2 = data);
+    console.log(quote2.content, false + " - " + quote2.author);
+
+    var jsonOut = {
+        quote: splitAtRandom(quote1.content, true) + " " + splitAtRandom(quote2.content, false),
+        author1: quote1.author,
+        author2: quote2.author
+    }
+    
+    console.log(jsonOut);
+    res.header("Access-Control-Allow-Origin", '*'); 
+    res.json(jsonOut);
+});
+
 function getQuoteAsync() {
     return fetch("https://api.quotable.io/random")
         .then((response) => response.json())
