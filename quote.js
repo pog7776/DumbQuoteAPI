@@ -33,14 +33,14 @@ app.get('/api/quote/json', async (req, res) => {
     console.log(quote2.content, false + " - " + quote2.author);
 
     var jsonOut = {
-        quote: splitAtRandom(quote1.content, true) + " " + splitAtRandom(quote2.content, false),
-        author1: quote1.author,
-        author2: quote2.author
+        "quote": splitAtRandom(quote1.content, true) + " " + splitAtRandom(quote2.content, false),
+        "author1": quote1.author,
+        "author2": quote2.author
     }
-    
+
     console.log(jsonOut);
     res.header("Access-Control-Allow-Origin", '*'); 
-    res.json(jsonOut);
+    res.json(JSON.stringify(jsonOut));
 });
 
 function getQuoteAsync() {
@@ -70,7 +70,7 @@ function splitAtRandom(quote, first) {
     }
 }
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8000;
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
